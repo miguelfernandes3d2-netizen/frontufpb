@@ -1,0 +1,528 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   BASE — reset, tipografia e primitivas compartilhadas
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@import url("./tokens.css");
+
+@font-face {
+  font-family: "Jackson Xilogravura";
+  /* Caminho relativo para que o protótipo funcione em file:// e em subpath. */
+  src: url("../../assets/fonts/JacksonXilogravura-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1.5rem);
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  /* Sem min-width: a 320px de viewport, a barra de rolagem vertical
+     reduz a área útil e um piso fixo geraria rolagem horizontal.
+     O layout é fluido e `overflow-x: clip` contém qualquer excesso. */
+  min-width: 0;
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Atmosfera: brilho de papel + grão fino. Puramente decorativo. */
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 50% at 8% -4%, rgb(122 38 58 / 9%), transparent 62%),
+    radial-gradient(ellipse 55% 45% at 96% 12%, rgb(194 154 74 / 12%), transparent 60%);
+  content: "";
+  pointer-events: none;
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--grain);
+  content: "";
+  opacity: 0.28;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+  letter-spacing: -0.018em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--wine-dark);
+  text-decoration-color: rgb(84 21 37 / 32%);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+  transition: color var(--dur-1) var(--ease-out),
+    text-decoration-color var(--dur-1) var(--ease-out);
+}
+
+a:hover {
+  color: var(--wine);
+  text-decoration-color: var(--wine);
+}
+
+::selection {
+  background: var(--wine);
+  color: #fff;
+}
+
+/* Anel de foco em vinho (8,5:1 sobre papel) — visível em fundo claro e escuro. */
+:focus-visible {
+  outline: 3px solid var(--wine);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* ── Link de salto ────────────────────────────────────────────────── */
+
+.skip-link {
+  position: fixed;
+  top: var(--space-s);
+  left: var(--space-s);
+  z-index: 1000;
+  padding: 0.75rem 1.15rem;
+  transform: translateY(-200%);
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  box-shadow: var(--shadow-md);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--dur-2) var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  color: #fff;
+}
+
+/* ── Estrutura ────────────────────────────────────────────────────── */
+
+.shell {
+  width: min(100% - (var(--gutter) * 2), var(--content));
+  margin-inline: auto;
+}
+
+.reading-width {
+  width: min(100%, var(--reading));
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+.section--deep {
+  background: var(--grad-deep);
+}
+
+.section--surface {
+  background: rgb(252 250 246 / 66%);
+}
+
+.section--night {
+  background: var(--grad-night);
+  color: #f4efe6;
+}
+
+/* ── Cabeçalhos de seção ──────────────────────────────────────────── */
+
+.display {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: var(--space-m);
+  color: var(--wine);
+  font-size: var(--step--2);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 2.25rem;
+  height: 1px;
+  background: currentcolor;
+  content: "";
+}
+
+.lede {
+  max-width: 46rem;
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+  line-height: 1.65;
+}
+
+.title-xl {
+  max-width: 14ch;
+  margin-bottom: var(--space-m);
+  font-family: var(--font-heading);
+  font-size: var(--step-6);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.title-lg {
+  max-width: 16ch;
+  margin-bottom: var(--space-m);
+  font-family: var(--font-heading);
+  font-size: var(--step-5);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.title-md {
+  margin-bottom: var(--space-s);
+  font-family: var(--font-heading);
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+/* ── Botões ───────────────────────────────────────────────────────── */
+
+.button {
+  position: relative;
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--grad-wine);
+  box-shadow: var(--shadow-sm);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 750;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+  transition: transform var(--dur-2) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out),
+    background var(--dur-2) var(--ease-out);
+}
+
+.button::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgb(255 255 255 / 22%) 50%,
+    transparent 80%
+  );
+  content: "";
+  opacity: 0;
+  transform: translateX(-60%);
+  transition: opacity var(--dur-3) var(--ease-out),
+    transform var(--dur-3) var(--ease-out);
+  pointer-events: none;
+}
+
+.button:hover {
+  background: var(--grad-wine-deep);
+  box-shadow: 0 12px 28px rgb(122 38 58 / 22%);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.button:hover::after {
+  opacity: 1;
+  transform: translateX(60%);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button--secondary {
+  border-color: var(--line-wine);
+  background: transparent;
+  box-shadow: none;
+  color: var(--wine-dark);
+}
+
+.button--secondary::after {
+  display: none;
+}
+
+.button--secondary:hover {
+  border-color: var(--wine);
+  background: var(--wine);
+  color: #fff;
+}
+
+.button--quiet {
+  border-color: var(--line-strong);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+  color: var(--ink);
+}
+
+.button--quiet::after {
+  display: none;
+}
+
+.button--quiet:hover {
+  border-color: var(--wine);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--wine-dark);
+  transform: translateY(-1px);
+}
+
+.button--small {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+}
+
+.button--danger {
+  background: var(--danger);
+}
+
+.button[disabled],
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* ── Links de texto ───────────────────────────────────────────────── */
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--wine-dark);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.text-link::after {
+  content: "\2192";
+  transition: transform var(--dur-2) var(--ease-spring);
+}
+
+.text-link:hover {
+  color: var(--wine);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+}
+
+.text-link:hover::after {
+  transform: translateX(0.3rem);
+}
+
+/* ── Selos ────────────────────────────────────────────────────────── */
+
+.seal {
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  font-size: var(--step--2);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* ── Estados ──────────────────────────────────────────────────────── */
+
+.state-panel,
+.empty-state {
+  display: grid;
+  min-height: 16rem;
+  padding: var(--space-xl) var(--space-m);
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--veil-card);
+  box-shadow: var(--shadow-xs);
+  text-align: center;
+}
+
+.state-panel__inner,
+.empty-state > div {
+  max-width: 36rem;
+}
+
+.state-panel h2,
+.state-panel h3,
+.empty-state h2 {
+  margin-bottom: var(--space-2xs);
+  font-family: var(--font-heading);
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.state-panel p,
+.empty-state p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+}
+
+.state-panel p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Esqueletos de carregamento ───────────────────────────────────── */
+
+.skeleton-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.skeleton-card__image {
+  aspect-ratio: 4 / 5;
+}
+
+.skeleton-card__body {
+  display: grid;
+  padding: var(--space-m);
+  gap: 0.7rem;
+}
+
+.skeleton-card__line {
+  height: 1.15rem;
+  border-radius: var(--radius-pill);
+}
+
+.skeleton-card__line:last-child {
+  width: 62%;
+  height: 0.8rem;
+}
+
+.skeleton-card__image,
+.skeleton-card__line {
+  background: linear-gradient(
+    90deg,
+    var(--paper-deep) 0%,
+    #f8f3ea 50%,
+    var(--paper-deep) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 1.5s linear infinite;
+}
+
+@keyframes skeleton {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ── Revelação ao rolar ───────────────────────────────────────────────
+   A classe .reveal é adicionada por JS. Sem JavaScript, nenhum elemento
+   é ocultado — a informação permanece sempre legível.
+   ─────────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--dur-3) var(--ease-out),
+      transform var(--dur-3) var(--ease-out);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}

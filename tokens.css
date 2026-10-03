@@ -1,0 +1,115 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   MEMÓRIAS DA POESIA POPULAR — SISTEMA DE DESIGN
+   Direção: "Editorial contemporâneo premium"
+   ───────────────────────────────────────────────────────────────────────
+   A paleta, a fonte Jackson Xilogravura e a ordem dos apoiadores seguem
+   exatamente o design.md do projeto. Esta camada formaliza escala,
+   ritmo, profundidade e movimento.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  color-scheme: light;
+
+  /* ── Paleta (design.md, inalterada) ─────────────────────────────── */
+  --paper: #f4f0e8;
+  --paper-deep: #e8dfd1;
+  --surface: #fcfaf6;
+  --surface-strong: #ffffff;
+  --ink: #211a18;
+  --ink-soft: #5b514c;
+  --wine: #7a263a;
+  --wine-dark: #541525;
+  --brass: #c29a4a;
+  --sage: #53665a;
+  --danger: #a52a2a;
+
+  /* ── Bordas ─────────────────────────────────────────────────────── */
+  --line: rgb(33 26 24 / 16%);
+  --line-soft: rgb(33 26 24 / 9%);
+  --line-strong: rgb(33 26 24 / 28%);
+  --line-wine: rgb(122 38 58 / 26%);
+  --line-light: rgb(255 255 255 / 14%);
+
+  /* ── Superfícies translúcidas ───────────────────────────────────── */
+  --veil: rgb(252 250 246 / 72%);
+  --veil-strong: rgb(252 250 246 / 88%);
+  --veil-card: rgb(252 250 246 / 82%);
+
+  /* ── Gradientes de marca ───────────────────────────────────────── */
+  --grad-wine: linear-gradient(135deg, #8c3044 0%, #7a263a 52%, #5d1a2b 100%);
+  --grad-wine-deep: linear-gradient(135deg, #742338 0%, #541525 58%, #45101f 100%);
+  --grad-paper: linear-gradient(135deg, #f8f4ed 0%, #f1ded9 46%, #f4f0e8 100%);
+  --grad-deep: linear-gradient(135deg, #eee4d7 0%, #e8dfd1 52%, #f0e7dc 100%);
+  --grad-night: linear-gradient(150deg, #2a1d1a 0%, #211a18 56%, #16100f 100%);
+
+  /* ── Tipografia ─────────────────────────────────────────────────── */
+  --font-display: "Jackson Xilogravura", Georgia, serif;
+  --font-heading: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif;
+
+  --step--2: 0.78rem;
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: clamp(1.08rem, 0.25vw + 1.02rem, 1.2rem);
+  --step-2: clamp(1.25rem, 0.7vw + 1.08rem, 1.55rem);
+  --step-3: clamp(1.55rem, 1.4vw + 1.15rem, 2.25rem);
+  --step-4: clamp(2rem, 2.6vw + 1.2rem, 3.1rem);
+  --step-5: clamp(2.5rem, 4.6vw + 1.2rem, 4.4rem);
+  --step-6: clamp(3rem, 7vw + 0.9rem, 6.25rem);
+
+  /* ── Ritmo ──────────────────────────────────────────────────────── */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 6.5rem;
+
+  --section-y: clamp(4.5rem, 9vw, 8.5rem);
+
+  /* ── Raios ──────────────────────────────────────────────────────── */
+  --radius-xs: 0.4rem;
+  --radius-sm: 0.65rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-pill: 999px;
+
+  /* ── Profundidade em duas camadas (ambiente + contato) ──────────── */
+  --shadow-xs: 0 1px 2px rgb(33 26 24 / 5%);
+  --shadow-sm: 0 1px 2px rgb(33 26 24 / 4%), 0 4px 14px rgb(33 26 24 / 5%);
+  --shadow-md: 0 1px 2px rgb(33 26 24 / 4%), 0 14px 32px rgb(33 26 24 / 8%);
+  --shadow-lg: 0 2px 4px rgb(33 26 24 / 4%), 0 26px 60px rgb(33 26 24 / 11%);
+  --shadow-xl: 0 2px 6px rgb(33 26 24 / 5%), 0 44px 96px rgb(33 26 24 / 15%);
+  --shadow-inset: inset 0 1px 0 rgb(255 255 255 / 60%);
+
+  /* ── Movimento (design.md: 150ms–300ms) ────────────────────────── */
+  --dur-1: 150ms;
+  --dur-2: 220ms;
+  --dur-3: 300ms;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.28, 0.64, 1);
+
+  /* ── Layout ─────────────────────────────────────────────────────── */
+  --content: 76rem;
+  --reading: 44rem;
+  --header-height: 5.25rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+
+  /* ── Textura de papel (grão original, gerado por filtro SVG) ───── */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* Respeita a preferência do sistema por mais contraste. */
+@media (prefers-contrast: more) {
+  :root {
+    --ink-soft: #3c3430;
+    --line: rgb(33 26 24 / 32%);
+    --line-strong: rgb(33 26 24 / 48%);
+  }
+}
