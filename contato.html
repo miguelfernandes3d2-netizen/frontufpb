@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo visual da página de contato do projeto.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#7a263a">
+  <title>Contato — Memórias da Poesia Popular</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/styles/public.css">
+  <link rel="stylesheet" href="src/styles/demo.css">
+</head>
+<body data-page="contact">
+  
+<div class="demo-banner" role="note">
+  <span class="demo-banner__tag">Protótipo visual</span>
+  <span><strong>Conteúdo de demonstração.</strong> Nomes, textos e imagens são fictícios e servem apenas para apresentar a interface.</span>
+</div>
+
+<a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html" aria-label="Memórias da Poesia Popular — página inicial">
+      <span class="brand__title">Memórias</span>
+      <span class="brand__descriptor">da Poesia Popular</span>
+    </a>
+    <nav class="site-nav" id="site-navigation" aria-label="Navegação principal" data-open="false">
+      <a class="site-nav__link" href="index.html">Início</a>
+      <a class="site-nav__link" href="sobre.html">Sobre</a>
+      <a class="site-nav__link" href="biografias.html">Poetisas</a>
+      <a class="site-nav__link" href="contato.html" aria-current="page">Contato</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main id="conteudo-principal">
+    
+    <header class="page-hero">
+      <div class="shell page-hero__inner">
+        <div>
+          <span class="eyebrow">Contato</span>
+          <h1>Fale com o projeto.</h1>
+        </div>
+        <p>Use este espaço para enviar somente depois que a instituição confirmar o canal oficial de atendimento.</p>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="titulo-contato">
+      <div class="shell contact-layout">
+        <div>
+          <span class="eyebrow">Antes de enviar</span>
+          <h2 class="title-lg" id="titulo-contato">Informação verificável.</h2>
+          <div class="contact-note">
+            <p><strong>Canal institucional em validação.</strong></p>
+            <p>O projeto ainda não possui um e-mail ou serviço de recebimento confirmado. Por isso, o formulário permanece desabilitado até que a UFPB forneça um destino oficial.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="state-panel">
+            <div class="state-panel__inner">
+              <h3>Formulário temporariamente indisponível</h3>
+              <p>Ative o formulário somente após a confirmação do e-mail ou serviço institucional responsável.</p>
+            </div>
+          </div>
+          <details style="margin-top: var(--space-m)">
+            <summary style="cursor: pointer; font-weight: 700; font-size: 0.88rem">Ver o formulário no estado ativo</summary>
+            <form class="form-grid" style="margin-top: var(--space-m)" novalidate>
+              <div class="form-field form-field--full">
+                <label for="c-nome">Nome</label>
+                <input id="c-nome" name="name" type="text" autocomplete="name" placeholder="Como devemos chamar você">
+              </div>
+              <div class="form-field form-field--full">
+                <label for="c-email">E-mail</label>
+                <input id="c-email" name="email" type="email" autocomplete="email" placeholder="seu@exemplo.com">
+              </div>
+              <div class="form-field form-field--full">
+                <label for="c-msg">Mensagem</label>
+                <textarea id="c-msg" name="message" placeholder="Escreva sua mensagem"></textarea>
+                <small>Não envie dados sensíveis ou arquivos pessoais.</small>
+              </div>
+              <p class="form-message form-field--full" role="status">Mensagem enviada com sucesso.</p>
+              <div class="form-actions form-field--full">
+                <button class="button" type="button">Enviar mensagem</button>
+              </div>
+            </form>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+<section class="supporters" aria-labelledby="titulo-apoiadores">
+  <div class="shell supporters__inner">
+    <h2 id="titulo-apoiadores">Apoio e realização</h2>
+    <div class="supporters__grid">
+    <div class="supporter">
+      <img src="assets/logos/CNPq.png" alt="CNPq" width="720" height="222" decoding="async">
+    </div>
+    <div class="supporter">
+      <img src="assets/logos/ACVPB.png" alt="ACVPB" width="360" height="537" decoding="async">
+    </div>
+    <div class="supporter">
+      <img src="assets/logos/DCI.png" alt="DCI" width="699" height="360" decoding="async">
+    </div>
+    <div class="supporter">
+      <img src="assets/logos/PPGCI.png" alt="PPGCI" width="705" height="360" decoding="async">
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <strong>Memórias da Poesia Popular</strong>
+          <span>Acervo digital de poetisas da literatura de cordel</span>
+        </div>
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="biografias.html">Poetisas</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+      <div class="footer-about">
+        <p>Um site aberto para conhecer biografias, obras e capas de folhetos vinculados às poetisas.</p>
+        <a class="text-link" href="painel.html">Acesso administrativo</a>
+      </div>
+    </div>
+    <section class="credits" aria-labelledby="titulo-creditos">
+      <h2 id="titulo-creditos">Créditos</h2>
+      <div class="credits__group">
+        <a class="credit-pill" href="https://portsamuellmsa.vercel.app" target="_blank" rel="noopener noreferrer">Samuel</a>
+        <a class="credit-pill" href="https://miguelfernandes3d2-netizen.github.io/portifolio.green/" target="_blank" rel="noopener noreferrer">Miguel Fernandes</a>
+        <span class="credit-pill credit-pill--illustrator">Jackson — Ilustrador</span>
+      </div>
+    </section>
+    <div class="footer-bottom">
+      <span>© 2026 Memórias da Poesia Popular. Protótipo visual.</span>
+      <span>Projeto acadêmico da UFPB</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

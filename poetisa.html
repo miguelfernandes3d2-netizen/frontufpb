@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo visual do perfil de uma poetisa: biografia, obras e capas.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#7a263a">
+  <title>Perfil de poetisa — Memórias da Poesia Popular</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/styles/public.css">
+  <link rel="stylesheet" href="src/styles/demo.css">
+</head>
+<body data-page="poetisa">
+  
+<div class="demo-banner" role="note">
+  <span class="demo-banner__tag">Protótipo visual</span>
+  <span><strong>Conteúdo de demonstração.</strong> Nomes, textos e imagens são fictícios e servem apenas para apresentar a interface.</span>
+</div>
+
+<a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html" aria-label="Memórias da Poesia Popular — página inicial">
+      <span class="brand__title">Memórias</span>
+      <span class="brand__descriptor">da Poesia Popular</span>
+    </a>
+    <nav class="site-nav" id="site-navigation" aria-label="Navegação principal" data-open="false">
+      <a class="site-nav__link" href="index.html">Início</a>
+      <a class="site-nav__link" href="sobre.html">Sobre</a>
+      <a class="site-nav__link" href="biografias.html" aria-current="page">Poetisas</a>
+      <a class="site-nav__link" href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main id="conteudo-principal">
+    <section class="section" aria-labelledby="nome-poetisa">
+      <div class="shell profile-header">
+        <nav class="breadcrumb" aria-label="Trilha de navegação">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="biografias.html">Poetisas</a></li>
+            <li><span aria-current="page">Maria Ferreira da Silva</span></li>
+          </ol>
+        </nav>
+
+        <div class="profile-portrait">
+          <div class="profile-portrait__frame">
+            <img src="assets/demo/retrato-1.svg" alt="Retrato de demonstração" width="800" height="1000">
+          </div>
+        </div>
+
+        <article class="profile-copy">
+          <h1 id="nome-poetisa">Maria Ferreira da Silva</h1>
+          <ul class="profile-facts">
+            <li>4 obras catalogadas</li>
+            <li>1956 — 1974</li>
+            <li>Registro de demonstração</li>
+          </ul>
+          <p class="lede">Poetisa e cordelista do interior da Paraíba, com obra circulada em feiras e feiras livres do sertão.</p>
+          <div class="biography">
+            <p>Este texto é um parágrafo de demonstração, escrito para mostrar a leitura da biografia no tamanho e no ritmo da interface. Ele existe apenas para avaliar a tipografia e a medida de linha.</p>
+            <p>Um segundo parágrafo permite conferir a capitular, o espaçamento entre parágrafos e a altura de linha em blocos maiores de texto corrido.</p>
+            <p>Terceiro parágrafo de exemplo, para verificar o comportamento da coluna de leitura em telas estreitas e a quebra de linha em títulos longos.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--deep works-section" aria-labelledby="titulo-obras">
+      <div class="shell">
+        <div class="works-heading">
+          <div>
+            <span class="eyebrow">Acervo</span>
+            <h2 id="titulo-obras">Obras e folhetos</h2>
+          </div>
+          <p class="works-count">4 obras</p>
+        </div>
+
+        <nav class="works-index" aria-labelledby="titulo-indice-obras">
+          <h3 id="titulo-indice-obras">Índice das obras (4)</h3>
+          <ol>
+            <li><a href="#obra-1">A seca e o retorno</a><small>1956 · Cordel</small></li>
+            <li><a href="#obra-2">Maria e o viajante</a><small>1961 · Folheto</small></li>
+            <li><a href="#obra-3">O João e as estrepolias</a><small>1968 · Cordel</small></li>
+            <li><a href="#obra-4">Cantigas do trabalho</a><small>1974 · Folheto</small></li>
+          </ol>
+        </nav>
+
+        <div class="works-gallery">
+        <figure class="work-card" id="obra-1">
+          <span class="work-card__button" style="cursor: default">
+            <img class="work-card__image" src="assets/demo/capa-1.svg" alt="Capa de demonstração de A seca e o retorno" width="600" height="750" decoding="async">
+          </span>
+          <figcaption>
+            <strong>A seca e o retorno</strong>
+            <span>1956 · Cordel</span>
+            <span>Capa de demonstração</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work-card" id="obra-2">
+          <span class="work-card__button" style="cursor: default">
+            <img class="work-card__image" src="assets/demo/capa-2.svg" alt="Folheto digitalizado, frente. de Maria e o viajante" width="600" height="750" decoding="async">
+          </span>
+          <figcaption>
+            <strong>Maria e o viajante</strong>
+            <span>1961 · Folheto</span>
+            <span>Folheto digitalizado, frente.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work-card" id="obra-3">
+          <span class="work-card__button" style="cursor: default">
+            <img class="work-card__image" src="assets/demo/capa-3.svg" alt="Capa de demonstração de O João e as estrepolias" width="600" height="750" decoding="async">
+          </span>
+          <figcaption>
+            <strong>O João e as estrepolias</strong>
+            <span>1968 · Cordel</span>
+            <span>Capa de demonstração</span>
+          </figcaption>
+        </figure>
+
+        <figure class="work-card" id="obra-4">
+          <span class="work-card__button" style="cursor: default">
+            <img class="work-card__image" src="assets/demo/capa-4.svg" alt="Folheto digitalizado, verso. de Cantigas do trabalho" width="600" height="750" decoding="async">
+          </span>
+          <figcaption>
+            <strong>Cantigas do trabalho</strong>
+            <span>1974 · Folheto</span>
+            <span>Folheto digitalizado, verso.</span>
+          </figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+<section class="supporters" aria-labelledby="titulo-apoiadores">
+  <div class="shell supporters__inner">
+    <h2 id="titulo-apoiadores">Apoio e realização</h2>
+    <div class="supporters__grid">
+    <div class="supporter">
+      <img src="assets/logos/CNPq.png" alt="CNPq" width="720" height="222" decoding="async">
+    </div>
+    <div class="supporter">
+      <img src="assets/logos/ACVPB.png" alt="ACVPB" width="360" height="537" decoding="async">
+    </div>
+    <div class="supporter">
+      <img src="assets/logos/DCI.png" alt="DCI" width="699" height="360" decoding="async">
+    </div>
+    <div class="supporter">
+      <img src="assets/logos/PPGCI.png" alt="PPGCI" width="705" height="360" decoding="async">
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <strong>Memórias da Poesia Popular</strong>
+          <span>Acervo digital de poetisas da literatura de cordel</span>
+        </div>
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="biografias.html">Poetisas</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+      <div class="footer-about">
+        <p>Um site aberto para conhecer biografias, obras e capas de folhetos vinculados às poetisas.</p>
+        <a class="text-link" href="painel.html">Acesso administrativo</a>
+      </div>
+    </div>
+    <section class="credits" aria-labelledby="titulo-creditos">
+      <h2 id="titulo-creditos">Créditos</h2>
+      <div class="credits__group">
+        <a class="credit-pill" href="https://portsamuellmsa.vercel.app" target="_blank" rel="noopener noreferrer">Samuel</a>
+        <a class="credit-pill" href="https://miguelfernandes3d2-netizen.github.io/portifolio.green/" target="_blank" rel="noopener noreferrer">Miguel Fernandes</a>
+        <span class="credit-pill credit-pill--illustrator">Jackson — Ilustrador</span>
+      </div>
+    </section>
+    <div class="footer-bottom">
+      <span>© 2026 Memórias da Poesia Popular. Protótipo visual.</span>
+      <span>Projeto acadêmico da UFPB</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Memórias da Poesia Popular",
+  "short_name": "Memórias",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f0e8",
+  "theme_color": "#7a263a",
+  "icons": [{
+    "src": "/favicon.svg",
+    "sizes": "any",
+    "type": "image/svg+xml"
+  }]
+}

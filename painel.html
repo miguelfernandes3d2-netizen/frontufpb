@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#7a263a">
+  <title>Painel administrativo — Memórias da Poesia Popular</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/styles/admin.css">
+  <link rel="stylesheet" href="src/styles/demo.css">
+</head>
+<body class="admin-body">
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+  
+<div class="demo-banner" role="note">
+  <span class="demo-banner__tag">Protótipo visual</span>
+  <span><strong>Conteúdo de demonstração.</strong> Nomes, textos e imagens são fictícios e servem apenas para apresentar a interface.</span>
+</div>
+
+  <main id="conteudo-principal">
+    <div data-admin-app>
+      <header class="admin-topbar">
+        <div class="admin-shell admin-topbar__inner">
+          <a class="admin-topbar__brand" href="index.html">
+            <strong>Memórias</strong>
+            <span>Painel administrativo</span>
+          </a>
+          <div class="admin-topbar__account">
+            <span class="admin-topbar__email">supervisao@ufpb.br</span>
+            <button class="button button--secondary button--small" type="button">Sair</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-layout admin-shell">
+        <nav class="admin-sidebar" aria-label="Seções do painel">
+          <p class="admin-sidebar__title">Acervo</p>
+          <a class="admin-sidebar__link" href="painel.html" aria-current="page">Poetisas</a>
+          <a class="admin-sidebar__link" href="biografias.html">Ver no site público</a>
+          <p class="admin-sidebar__note">Somente contas autorizadas em <code>admin_users</code> conseguem acessar esta área.</p>
+        </nav>
+
+        <div class="admin-main">
+          <div class="dashboard-heading">
+            <div>
+              <span class="eyebrow">Acervo</span>
+              <h1>Poetisas</h1>
+              <p>Cadastre, edite e organize os registros do acervo.</p>
+            </div>
+            <button class="button" type="button">Nova poetisa</button>
+          </div>
+
+          <div class="dashboard-stats" aria-label="Resumo do acervo">
+            <div class="stat-card"><strong>42</strong><span>Total de registros</span></div>
+            <div class="stat-card"><strong>36</strong><span>Publicadas</span></div>
+            <div class="stat-card"><strong>6</strong><span>Rascunhos</span></div>
+          </div>
+
+          <div class="admin-toolbar">
+            <div class="admin-search">
+              <label class="visually-hidden" for="admin-search-input">Buscar poetisa</label>
+              <input id="admin-search-input" type="search" placeholder="Buscar por nome" autocomplete="off" value="Maria">
+            </div>
+            <div class="admin-search">
+              <label class="visually-hidden" for="admin-status-filter">Filtrar por situação</label>
+              <select id="admin-status-filter">
+                <option value="">Todas as situações</option>
+                <option value="published">Publicadas</option>
+                <option value="draft">Rascunhos</option>
+                <option value="archived">Arquivadas</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="admin-status">5 registros exibidos.</p>
+
+          <div class="admin-record-list">
+          <article class="record-card">
+            <div class="record-card__portrait"><img src="assets/demo/retrato-1.svg" alt="Retrato de demonstração" width="144" height="176"></div>
+            <div class="record-card__body">
+              <h2 class="record-card__name">Maria Ferreira da Silva</h2>
+              <div class="record-card__meta">
+                <span class="status-badge" data-status="published">Publicada</span>
+                <span>4 obras</span>
+                <span class="record-card__summary">Poetisa e cordelista do interior da Paraíba.</span>
+              </div>
+            </div>
+            <div class="record-card__actions">
+              <button class="button button--secondary button--small" type="button">Editar</button>
+              <button class="button button--quiet button--small" type="button">Arquivar</button>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-card__portrait"><img src="assets/demo/retrato-3.svg" alt="Retrato de demonstração" width="144" height="176"></div>
+            <div class="record-card__body">
+              <h2 class="record-card__name">Joana Macedo</h2>
+              <div class="record-card__meta">
+                <span class="status-badge" data-status="published">Publicada</span>
+                <span>3 obras</span>
+                <span class="record-card__summary">Poetisa do sertão, registrada em antologias.</span>
+              </div>
+            </div>
+            <div class="record-card__actions">
+              <button class="button button--secondary button--small" type="button">Editar</button>
+              <button class="button button--quiet button--small" type="button">Arquivar</button>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-card__portrait"><img src="assets/demo/retrato-4.svg" alt="Retrato de demonstração" width="144" height="176"></div>
+            <div class="record-card__body">
+              <h2 class="record-card__name">Antônia Nascimento</h2>
+              <div class="record-card__meta">
+                <span class="status-badge" data-status="draft">Rascunho</span>
+                <span>2 obras</span>
+                <span class="record-card__summary">Escritora de cordel de humor.</span>
+              </div>
+            </div>
+            <div class="record-card__actions">
+              <button class="button button--secondary button--small" type="button">Editar</button>
+              <button class="button button--quiet button--small" type="button">Arquivar</button>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-card__portrait"><span aria-hidden="true">RC</span></div>
+            <div class="record-card__body">
+              <h2 class="record-card__name">Rosalina Cavalcanti</h2>
+              <div class="record-card__meta">
+                <span class="status-badge" data-status="published">Publicada</span>
+                <span>0 obras</span>
+                <span class="record-card__summary">Guardiã de cantigas de trabalho.</span>
+              </div>
+            </div>
+            <div class="record-card__actions">
+              <button class="button button--secondary button--small" type="button">Editar</button>
+              <button class="button button--quiet button--small" type="button">Arquivar</button>
+            </div>
+          </article>
+
+          <article class="record-card">
+            <div class="record-card__portrait"><img src="assets/demo/retrato-5.svg" alt="Retrato de demonstração" width="144" height="176"></div>
+            <div class="record-card__body">
+              <h2 class="record-card__name">Teresa Carvalho</h2>
+              <div class="record-card__meta">
+                <span class="status-badge" data-status="archived">Arquivada</span>
+                <span>1 obra</span>
+                <span class="record-card__summary">Poetisa dos folhetos de São João.</span>
+              </div>
+            </div>
+            <div class="record-card__actions">
+              <button class="button button--secondary button--small" type="button">Editar</button>
+              
+            </div>
+          </article>
+          </div>
+
+          <nav class="pagination" aria-label="Paginação do acervo">
+            <button class="button button--secondary button--small" type="button" disabled>Anterior</button>
+            <span>Página 1 de 3</span>
+            <button class="button button--secondary button--small" type="button">Próxima</button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <dialog class="editor-dialog" open>
+    <form class="editor-dialog__form">
+      <header class="editor-dialog__header">
+        <h2>Editar poetisa</h2>
+        <button class="button button--quiet" type="button">Fechar</button>
+      </header>
+
+      <div class="editor-dialog__body">
+        <div class="form-field">
+          <label for="poetisa-status">Situação</label>
+          <select id="poetisa-status"><option>Publicada</option><option>Rascunho</option><option>Arquivada</option></select>
+        </div>
+
+        <div class="form-field">
+          <label for="poetisa-name">Nome *</label>
+          <input id="poetisa-name" type="text" value="Maria Ferreira da Silva">
+        </div>
+
+        <div class="form-field form-field--full">
+          <label for="poetisa-summary">Resumo</label>
+          <textarea id="poetisa-summary">Poetisa e cordelista do interior da Paraíba, com obra circulada em feiras e feiras livres.</textarea>
+          <small>Aparece nos cards do acervo. Use um texto curto e objetivo.</small>
+        </div>
+
+        <div class="form-field form-field--full">
+          <label for="poetisa-biography">Biografia *</label>
+          <textarea id="poetisa-biography" data-long="true">Texto de demonstração para avaliar o campo longo do formulário, com altura suficiente para leitura confortável durante a digitação da biografia completa.</textarea>
+          <small>Separe parágrafos com uma linha em branco. O texto é armazenado sem HTML.</small>
+        </div>
+
+        <fieldset class="image-field form-field--full">
+          <legend class="field-label">Fotografia</legend>
+          <div class="image-upload">
+            <div class="image-upload__preview"><img src="assets/demo/retrato-1.svg" alt="Pré-visualização" width="192" height="240"></div>
+            <div>
+              <p class="help-text">JPG, PNG, WebP ou AVIF. Até 15 MB. A imagem será enviada diretamente para o armazenamento seguro.</p>
+              <label style="display:flex;gap:.45rem;align-items:center;font-size:.84rem;font-weight:600;color:var(--ink-soft)">
+                <input type="checkbox"> Remover fotografia atual
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <section class="works-editor" aria-labelledby="titulo-obras-editor">
+          <div class="works-editor__heading">
+            <div>
+              <h3 id="titulo-obras-editor">Obras e folhetos</h3>
+              <p class="help-text">Cada capa fica vinculada a uma obra.</p>
+            </div>
+            <button class="button button--secondary button--small" type="button">Adicionar obra</button>
+          </div>
+
+          <div class="work-item">
+            <div class="work-item__header">
+              <span class="work-item__number">01</span>
+              <button class="button button--quiet button--small" type="button">Remover obra</button>
+            </div>
+            <div class="work-item__grid">
+              <div class="form-field form-field--full">
+                <label>Título da obra</label>
+                <input type="text" value="A seca e o retorno">
+              </div>
+              <div class="form-field">
+                <label>Tipo</label>
+                <select><option>Cordel</option><option>Folheto</option></select>
+              </div>
+              <div class="form-field">
+                <label>Ano de publicação</label>
+                <input type="text" value="1956">
+              </div>
+              <div class="form-field form-field--full">
+                <div class="work-cover">
+                  <div class="work-cover__preview"><img src="assets/demo/capa-1.svg" alt="Pré-visualização da capa" width="128" height="160"></div>
+                  <div>
+                    <p class="help-text">Selecionar capa (JPG, PNG, WebP ou AVIF)</p>
+                    <p class="help-text">Legenda: Capa de demonstração</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="editor-dialog__footer">
+        <p class="form-error"></p>
+        <button class="button button--secondary" type="button">Cancelar</button>
+        <button class="button" type="button">Salvar poetisa</button>
+      </footer>
+    </form>
+  </dialog>
+</body>
+</html>
